@@ -1,0 +1,31 @@
+# Node modules
+node_modules/
+Backend/node_modules/
+Frontend/node_modules/
+
+# Environment files
+.env
+Backend/.env
+Frontend/.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and OS files
+.vscode/
+.DS_Store
+
+# Build output
+dist/
+build/
+
+# Sensitive credential files (pattern-based)
+*db_cred*.txt
+
+*db_username_cd*.png
+
+# Misc
+coverage/
+*.log
