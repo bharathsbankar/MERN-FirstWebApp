@@ -12,9 +12,12 @@ console.log(process.env.MONGO_URI);
 const app = express();
 const PORT = process.env.PORT || 5001;
 
+// app.use(express.json());
+
 connectDB();
 
-app.use("/app/notes", notesRoutes);
+// Mount notes routes under the expected /api/notes path
+app.use("/api/notes", notesRoutes);
 
 app.listen(PORT, () => {
   console.log("server started on port:", PORT);
