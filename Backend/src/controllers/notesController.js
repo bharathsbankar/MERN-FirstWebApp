@@ -16,7 +16,7 @@ export async function getNotesById(req, res) {
     if (!notes) return res.status(404).json({ message: "Note not found" });
     res.status(200).json(notes);
   } catch (error) {
-    console.error("Error in gettingnote by id ", error);
+    console.error("Error: Invalid ID ", error);
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -54,7 +54,7 @@ export async function deleteNotes(req, res) {
   try {
     const deletedNote = await Note.findByIdAndDelete(req.params.id);
     if (!deletedNote) {
-      return res.status(404).json({ message: "Note not found" });
+      return res.status(200).json({ message: "Note not found" });
     }
 
     res.status(200).json(deletedNote);
